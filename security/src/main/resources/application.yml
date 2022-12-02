@@ -1,0 +1,14 @@
+server:
+  port: 8282
+  contextPath: /authServer
+
+security:
+  user:
+    name: authUser
+    password: authUserSecret
+  oauth2:
+    client:
+      clientId: yantodev
+      clientSecret: ?f)455"UxI,0|CV
+      authorized-grant-type: authorization_code,refresh_token,password
+      scope: openid

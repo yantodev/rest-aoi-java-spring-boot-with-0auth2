@@ -1,0 +1,84 @@
+server:
+  port: 8074
+  tomcat:
+    max-threads: 4000
+    connection-timeout: 30000 #in milisecond
+#============================================================================
+# BASH PATH
+#============================================================================
+#client:
+#  security:
+#    base-path: http://localhost:8282/authServer
+#============================================================================
+# SECURITY
+#============================================================================
+#security:
+#  oauth2:
+#    client:
+#      client-id: testClient
+#      client-secret: testClientSecret
+#      access-token-uri: ${client.security.base-path}/oauth/token
+#      user-authorization-uri: ${client.security.base-path}/oauth/authorize
+#    resource:
+#      user-info-uri: ${client.security.base-path}/user
+
+#============================================================================
+# SPRING
+#============================================================================
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}?useSSL=false
+    username: ${db.username}
+    password: ${db.password}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  #  datasource:
+  #    driver-class-name: org.postgresql.Driver
+  #    url: jdbc:postgresql://${db.host}:${db.port}/${db.name}
+  #    username: ${db.username}
+  #    password: ${db.password}
+  #    hikari:
+  #      minimumIdle: 10
+  #      maximumPoolSize: 60
+  #      idleTimeout: 30000
+  #      poolName: helios-security-pool
+  #      maxLifetime: 2000000
+  #      connectionTimeout: 60000
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        jdbc:
+#          lob:
+#            non_contextual_creation: true
+#        naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+#        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+#    hibernate:
+#      ddl-auto: validate     # Hibernate ddl auto (create, create-drop, validate, update)
+#============================================================================
+# DATABASE
+#============================================================================
+db:
+  name: smkmuhka_integrasi
+  host: localhost
+  port: 3306
+  username: root
+  password: C4hy4-1993
+  auto-reconnect: true
+  ssl: false
+
+security:
+  user:
+    name: authUser
+    password: authUserSecret
+  oauth2:
+    client:
+      clientId: yantodev
+      clientSecret: ?f)455"UxI,0|CV
+      authorized-grant-type: authorization_code,refresh_token,password
+      scope: openid
